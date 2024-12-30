@@ -1,0 +1,31 @@
+﻿<Window x:Class="Simple_To_Do_List.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Simple_To_Do_List"
+        mc:Ignorable="d"
+        Title="Simple To-Do List" 
+        Height="550"
+        Width="400"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+                <Button Name="AddNewNote" Style="{DynamicResource RoundedBtn}" Height="30" Command="{Binding AddNewCommand}" Background="#2A3084" BorderBrush="Transparent" BorderThickness="0">
+                    <StackPanel Margin="5,7,5,7" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Path Data="M4.935 0.503889L5 0.5C5.13607 0.500018 5.26741 0.549976 5.3691 0.640397C5.47078 0.730819 5.53575 0.855416 5.55167 0.990556L5.55556 1.05556V4.94444H9.44444C9.58052 4.94446 9.71185 4.99442 9.81354 5.08484C9.91523 5.17526 9.98019 5.29986 9.99611 5.435L10 5.5C9.99998 5.63607 9.95002 5.76741 9.8596 5.8691C9.76918 5.97078 9.64458 6.03575 9.50945 6.05167L9.44444 6.05556H5.55556V9.94444C5.55554 10.0805 5.50558 10.2119 5.41516 10.3135C5.32474 10.4152 5.20014 10.4802 5.065 10.4961L5 10.5C4.86393 10.5 4.73259 10.45 4.6309 10.3596C4.52922 10.2692 4.46425 10.1446 4.44833 10.0094L4.44444 9.94444V6.05556H0.555556C0.419482 6.05554 0.288146 6.00558 0.18646 5.91516C0.084774 5.82474 0.0198095 5.70014 0.00388887 5.565L0 5.5C1.79503e-05 5.36393 0.0499757 5.23259 0.140397 5.1309C0.230819 5.02922 0.355416 4.96425 0.490556 4.94833L0.555556 4.94444H4.44444V1.05556C4.44446 0.919482 4.49442 0.788146 4.58484 0.68646C4.67526 0.584774 4.79986 0.51981 4.935 0.503889Z" Height="8" Width="8" Fill="White" Stretch="Fill" Margin="0,0,5,0"/>
+                        <TextBlock Text="New Note" Foreground="White" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <ListBox Name="CollectionsListBox" Grid.Row="1" Margin="10" ItemsSource="{Binding Lists}" SelectedItem="{Binding SelectedItem}"/>
+        </Grid>
+    </Grid>
+</Window>
